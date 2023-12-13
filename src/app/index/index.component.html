@@ -1,5 +1,12 @@
 <app-menu></app-menu>
 <div class="container text-center">
-    <div *ngIf="isLogged; else loggedOut"><h5>Bienvenido {{nombreUsuario}}</h5></div>
-    <ng-template #loggedOut><h5>Para ingresar debe Inicia Sesión</h5></ng-template>
+    <div *ngIf="isLogged; else loggedOut"><h5>Bienvenido estimado {{nombreUsuario}}</h5><br>
+        <br>
+        <br>
+        <img width="240" height="240" src="https://img.icons8.com/pulsar-color/240/genie.png" alt="genie"/>
+        </div>
+    <ng-template #loggedOut><h5>Para que puedas ingresar, por favor inicia sesión.</h5><br>
+        <br>
+        <br>
+        <img width="240" height="240" src="https://img.icons8.com/pulsar-color/240/walter-white.png" alt="walter-white"/></ng-template>
 </div>
