@@ -6,6 +6,7 @@ import { Autor } from '../models/autor.model';
 
 const baseUrlAutor = AppSettings.API_ENDPOINT+ '/autor';
 const baseUrlAutorConsulta = AppSettings.API_ENDPOINT+ '/consultaAutor';
+const baseUrlUtil = AppSettings.API_ENDPOINT+ '/asignacionLibro';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,22 @@ const baseUrlAutorConsulta = AppSettings.API_ENDPOINT+ '/consultaAutor';
 export class AutorService {
 
   constructor(private http:HttpClient) { }
+
+  listaAutorDeLibro( id: string):Observable<Autor[]>{
+    return this.http.get<Autor[]>(baseUrlUtil+"/listaAutorPorLibro/"+id);
+  }
+  registraAutor( idLibro: string, idAutor: string):Observable<any>{
+    const params = new HttpParams()
+    .set("idLibro", idLibro)
+    .set("idAutor", idAutor)
+    return this.http.get<Autor[]>(baseUrlUtil+"/registraAutor", {params});
+  }
+  eliminaAutor( idLibro: string, idAutor: number):Observable<any>{
+    const params = new HttpParams()
+    .set("idLibro", idLibro)
+    .set("idAutor", idAutor)
+    return this.http.get<Autor[]>(baseUrlUtil+"/eliminaAutor", {params});
+  }
 
   consultaPorNombre(filtro:string):Observable<Autor[]>{
     return this.http.get<Autor[]>(baseUrlAutor+ "/listaAutorPorNombreLike/"+filtro);
