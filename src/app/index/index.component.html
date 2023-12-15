@@ -2,12 +2,12 @@
 <div class="container text-center">
     <div *ngIf="isLogged; else loggedOut"><h5>Bienvenido estimado {{nombreUsuario}}</h5><br>
         <br>
+        <h1>Biblioteca <strong><em>JITSI </em></strong></h1>
         <br>
         <img width="240" height="240" src="https://img.icons8.com/pulsar-color/240/genie.png" alt="genie"/>
         </div>
     <ng-template #loggedOut><h5>Para que puedas ingresar, por favor inicia sesión.</h5><br>
         <br>
-        <h1>Biblioteca <em>JITSI</em></h1>
         <br>
         <img width="240" height="240" src="https://img.icons8.com/pulsar-color/240/walter-white.png" alt="walter-white"/></ng-template>
 </div>
